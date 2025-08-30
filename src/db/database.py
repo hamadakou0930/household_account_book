@@ -2,9 +2,9 @@ import psycopg2
 from psycopg2 import sql
 
 DATABASE_CONFIG = {
-    'dbname': 'your_database_name',
-    'user': 'your_username',
-    'password': 'your_password',
+    'dbname': 'household_account_book',
+    'user': 'user',
+    #'password': 'your_password',
     'host': 'localhost',
     'port': '5432'
 }

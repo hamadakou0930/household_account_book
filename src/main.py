@@ -1,10 +1,11 @@
 import datetime
-from db.database import insert_record
+from db.database import insert_record, create_table
 from models.record import Record
 
 def add_record(date, category, amount, memo=""):
-    record = Record(date, category, amount, memo)
-    insert_record(record)
+    #record = Record(date, category, amount, memo)
+    #print(f"Adding record: {record}")
+    insert_record(date, category, amount, memo)
 
 def show_records():
     # ここではデータベースからレコードを取得して表示する処理を追加する予定
@@ -12,6 +13,10 @@ def show_records():
 
 def main():
     print("activate HOUSE HOLD ACCOUNT BOOK SYSTEM")
+    
+    # まずテーブルを作成
+    create_table()
+    
     # サンプルデータ追加
     add_record(datetime.date.today(), "食費", -1200, "ランチ")
     add_record(datetime.date.today(), "給料", 200000, "7月分")
