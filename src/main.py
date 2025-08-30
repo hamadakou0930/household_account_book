@@ -3,9 +3,8 @@ from db.database import insert_record, create_table
 from models.record import Record
 
 def add_record(date, category, amount, memo=""):
-    #record = Record(date, category, amount, memo)
-    #print(f"Adding record: {record}")
-    insert_record(date, category, amount, memo)
+    record = Record(date, category, amount, memo)
+    insert_record(**record.to_dict())
 
 def show_records():
     # ここではデータベースからレコードを取得して表示する処理を追加する予定
